@@ -19,6 +19,7 @@ public class Pieces : MonoBehaviour
 {
 
     private Tilemap tilemap;
+    private Material spriteMaterial;
 
     //references
 
@@ -49,6 +50,9 @@ public class Pieces : MonoBehaviour
     private void Awake() // or Start, if you prefer
     {
 
+        spriteMaterial = GetComponent<SpriteRenderer>().material;
+
+    
         tilemap = FindObjectOfType<Tilemap>();
 
         // Assign the pieceColor based on the sprite
@@ -69,6 +73,13 @@ public class Pieces : MonoBehaviour
         // Now your piece knows its color
     }
 
+    public void ChangeColor(Color newColor)
+    {
+        if (spriteMaterial != null)
+        {
+            spriteMaterial.color = newColor;
+        }
+    }
     //starting
 
     public void Activate()
@@ -259,29 +270,25 @@ public class Pieces : MonoBehaviour
         {
             Debug.Log($"Current tile found: {currentTile.name}");
 
-            // Check for Red piece and Red tile combination
             if (currentTile.name == "Tiles_Even_0" && pieceColor == PieceColor.Red)
             {
                 Debug.Log("Current tile is 'Tiles_Even_0' (Red) and piece color is Red. Changing color to White.");
-                GetComponent<SpriteRenderer>().color = Color.white;
+                spriteMaterial.color = Color.white; // Change color using material
             }
-            // Check for Green piece and Green tile combination
             else if (currentTile.name == "Tiles_Even_1" && pieceColor == PieceColor.Green)
             {
                 Debug.Log("Current tile is 'Tiles_Even_1' (Green) and piece color is Green. Changing color to White.");
-                GetComponent<SpriteRenderer>().color = Color.white;
+                spriteMaterial.color = Color.white; // Change color using material
             }
-            // Check for Blue piece and Blue tile combination
             else if (currentTile.name == "Tiles_Even_2" && pieceColor == PieceColor.Blue)
             {
                 Debug.Log("Current tile is 'Tiles_Even_2' (Blue) and piece color is Blue. Changing color to White.");
-                GetComponent<SpriteRenderer>().color = Color.white;
+                spriteMaterial.color = new Color(1f, 1f, 1f, 1f); // Change color using material
             }
-            // If it's not a matching color combination
             else
             {
                 Debug.Log($"Current tile is '{currentTile.name}' and piece color is {pieceColor}. Changing color to Black.");
-                GetComponent<SpriteRenderer>().color = Color.black;
+                spriteMaterial.color = Color.black; // Change color using material
             }
         }
         else
