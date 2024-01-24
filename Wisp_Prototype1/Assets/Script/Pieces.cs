@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public enum PieceColor
 {
@@ -16,6 +17,8 @@ public enum PieceColor
 
 public class Pieces : MonoBehaviour
 {
+
+    private Tilemap tilemap;
 
     //references
 
@@ -45,6 +48,9 @@ public class Pieces : MonoBehaviour
 
     private void Awake() // or Start, if you prefer
     {
+
+        tilemap = FindObjectOfType<Tilemap>();
+
         // Assign the pieceColor based on the sprite
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (sr.sprite == Piece) // Assuming 'Piece' is the red sprite
@@ -248,47 +254,32 @@ public class Pieces : MonoBehaviour
 
     public void ChangeColorBasedOnTile()
     {
-        SpriteRenderer tileSpriteRenderer = GetCurrentTileSpriteRenderer();
-        if (tileSpriteRenderer != null)
+        TileBase currentTile = GetCurrentTile();
+        if (currentTile != null)
         {
-            Debug.Log("Tile sprite renderer found."); // Confirm the tile's SpriteRenderer was found
-
-            Color pieceColor = GetComponent<SpriteRenderer>().color;
-            Color tileColor = tileSpriteRenderer.color;
-
-            Debug.Log($"Piece Color: {pieceColor}, Tile Color: {tileColor}"); // Output the colors
-
-            // Check if the colors are the same or different
-            if (pieceColor == tileColor)
+            // Assuming you have a way to identify the tile type or color
+            // For example, using custom tile types or tile names
+            if (currentTile.name == "RedTile" && pieceColor == PieceColor.Red)
             {
-                Debug.Log("Colors are the same. Changing piece color to white.");
                 GetComponent<SpriteRenderer>().color = Color.white;
             }
             else
             {
-                Debug.Log("Colors are different. Changing piece color to black.");
                 GetComponent<SpriteRenderer>().color = Color.black;
             }
         }
         else
         {
-            Debug.Log("No tile sprite renderer found under the piece."); // Indicate that no tile was found
+            Debug.Log("No tile found under the piece.");
         }
     }
 
 
     // Method to get the SpriteRenderer of the current tile
-    private SpriteRenderer GetCurrentTileSpriteRenderer()
+    private TileBase GetCurrentTile()
     {
-        // Implement logic to obtain the SpriteRenderer of the tile the piece is on
-        // This could involve raycasting down or looking up the grid based on the piece's position
-        // For example:
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
-        if (hit.collider != null && hit.collider.gameObject.CompareTag("Tile"))
-        {
-            return hit.collider.gameObject.GetComponent<SpriteRenderer>();
-        }
-        return null;
+        Vector3Int cellPosition = tilemap.WorldToCell(transform.position);
+        return tilemap.GetTile(cellPosition);
     }
 
 
