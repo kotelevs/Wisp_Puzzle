@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Tiles_Even_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 394.6667
+        width: 197.33333
+        height: 197.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d4a6b9ab485dc43aab159d64ee7bab
+      internalID: 348777430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Even_1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 394.6667
+        width: 197.33333
+        height: 197.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1e1a9552d95a7446afddea8bb372550
+      internalID: 379539905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Even_2
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 394.6667
+        width: 197.33333
+        height: 197.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a06175db6284644af531d90ed43035
+      internalID: 1408641670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Even_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 197.66667
+        width: 197.33333
+        height: 197.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c75811796113344ab4d038cf9aa04e
+      internalID: -35286591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Even_4
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 197.66667
+        width: 197.33333
+        height: 197.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 239a731177af88f4792d43c127695a50
+      internalID: -2867452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Even_5
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 197.66667
+        width: 197.33333
+        height: 197.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5e94b52427ad734893450a266af0466
+      internalID: -848270319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Even_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.66667175
+        width: 197.33333
+        height: 197.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b38fb8835627449a21bbcc50cc4789
+      internalID: -1443692000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Even_7
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 0.66667175
+        width: 197.33333
+        height: 197.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3304943d72c600a43bc9286edfd4e363
+      internalID: -886089062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Even_8
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 0.66667175
+        width: 197.33333
+        height: 197.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8d761b59efa3b408bd7c297aa2ee4d
+      internalID: -832646331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Even_9
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 578
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c75473d9fa7a4b4da54574a47c7981c
+      internalID: 1085899396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +342,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tiles_Even_0: 348777430
+      Tiles_Even_1: 379539905
+      Tiles_Even_2: 1408641670
+      Tiles_Even_3: -35286591
+      Tiles_Even_4: -2867452
+      Tiles_Even_5: -848270319
+      Tiles_Even_6: -1443692000
+      Tiles_Even_7: -886089062
+      Tiles_Even_8: -832646331
+      Tiles_Even_9: 1085899396
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

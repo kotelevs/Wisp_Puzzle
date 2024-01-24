@@ -43,6 +43,12 @@ public class MovePlate : MonoBehaviour
         reference.GetComponent<Pieces>().SetYBoard(matrixY);
         reference.GetComponent<Pieces>().SetCoords();
 
+        // After moving the piece
+       // reference.GetComponent<Pieces>().SetXBoard(matrixX);
+       // reference.GetComponent<Pieces>().SetYBoard(matrixY);
+       // reference.GetComponent<Pieces>().SetCoords();
+        reference.GetComponent<Pieces>().ChangeColorBasedOnTile(); // Add this line
+
         //allows the game controller to also keep track of whats going on here.. keep it in the know fr
         controller.GetComponent<GameControl>().SetPosition(reference);
 

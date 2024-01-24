@@ -190,4 +190,44 @@ public class Pieces : MonoBehaviour
         mpScript.SetReference(gameObject);
         mpScript.SetCoords(matrixY, matrixX);
     }
+
+    public void ChangeColorBasedOnTile()
+    {
+        // Get the current tile's sprite renderer to access its color
+        SpriteRenderer tileSpriteRenderer = GetCurrentTileSpriteRenderer();
+        if (tileSpriteRenderer != null)
+        {
+            Color pieceColor = GetComponent<SpriteRenderer>().color;
+            Color tileColor = tileSpriteRenderer.color;
+
+            // Check if the colors are the same or different
+            // Assuming color comparison is done based on the name or another identifier since Color comparison might not be exact
+            if (pieceColor == tileColor)
+            {
+                // Change piece to white if it's the same color
+                GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            else
+            {
+                // Change piece to black if it's a different color
+                GetComponent<SpriteRenderer>().color = Color.black;
+            }
+        }
+    }
+
+    // Method to get the SpriteRenderer of the current tile
+    private SpriteRenderer GetCurrentTileSpriteRenderer()
+    {
+        // Implement logic to obtain the SpriteRenderer of the tile the piece is on
+        // This could involve raycasting down or looking up the grid based on the piece's position
+        // For example:
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.1f);
+        if (hit.collider != null && hit.collider.gameObject.CompareTag("Tile"))
+        {
+            return hit.collider.gameObject.GetComponent<SpriteRenderer>();
+        }
+        return null;
+    }
+
+
 }
