@@ -26,12 +26,12 @@ public class GameControl : MonoBehaviour
         //Instantiate(Piece, new Vector3(0, 0), Quaternion.identity);
 
         player = new GameObject[] {
-            Create("Piece_Green", 1, 0),
+            Create("Piece_Green", 1, 1),
            // Create("Piece_Green", 5, 2),
-            Create("Piece_Blue", 1, 2),
+            Create("Piece_Blue", 1, 0),
            // Create("Piece_Blue", 2, 8),
-            Create("Piece", 2, 1),
-            Create("Piece", 0, 1)
+           // Create("Piece", 2, 1),
+            Create("Piece", 1, 2)
         };
 
         // set all place positions on the position board

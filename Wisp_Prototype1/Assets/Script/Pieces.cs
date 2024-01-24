@@ -257,14 +257,30 @@ public class Pieces : MonoBehaviour
         TileBase currentTile = GetCurrentTile();
         if (currentTile != null)
         {
-            // Assuming you have a way to identify the tile type or color
-            // For example, using custom tile types or tile names
-            if (currentTile.name == "RedTile" && pieceColor == PieceColor.Red)
+            Debug.Log($"Current tile found: {currentTile.name}");
+
+            // Check for Red piece and Red tile combination
+            if (currentTile.name == "Tiles_Even_0" && pieceColor == PieceColor.Red)
             {
+                Debug.Log("Current tile is 'Tiles_Even_0' (Red) and piece color is Red. Changing color to White.");
                 GetComponent<SpriteRenderer>().color = Color.white;
             }
+            // Check for Green piece and Green tile combination
+            else if (currentTile.name == "Tiles_Even_1" && pieceColor == PieceColor.Green)
+            {
+                Debug.Log("Current tile is 'Tiles_Even_1' (Green) and piece color is Green. Changing color to White.");
+                GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            // Check for Blue piece and Blue tile combination
+            else if (currentTile.name == "Tiles_Even_2" && pieceColor == PieceColor.Blue)
+            {
+                Debug.Log("Current tile is 'Tiles_Even_2' (Blue) and piece color is Blue. Changing color to White.");
+                GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            // If it's not a matching color combination
             else
             {
+                Debug.Log($"Current tile is '{currentTile.name}' and piece color is {pieceColor}. Changing color to Black.");
                 GetComponent<SpriteRenderer>().color = Color.black;
             }
         }
