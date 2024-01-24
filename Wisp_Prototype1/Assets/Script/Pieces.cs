@@ -3,8 +3,20 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 
+public enum PieceColor
+{
+    Red,
+    Green,
+    Blue,
+    White,
+    Black,
+    None // Use this for default or error cases
+}
+
+
 public class Pieces : MonoBehaviour
 {
+
     //references
 
     public GameObject controller;
@@ -18,9 +30,38 @@ public class Pieces : MonoBehaviour
     ///  i dont think i need the above at allllll 
     private string player;
 
-    // references for all the sprites the chess piece can be 
-    public Sprite Piece, Piece_Green, Piece_Blue;
+    /// old
+     // references for all the sprites the chess piece can be 
+    //public Sprite Piece, Piece_Green, Piece_Blue;
 
+    // References for all the sprites the chess piece can be
+    public Sprite Piece; // Let's assume this is red
+    public Sprite Piece_Green;
+    public Sprite Piece_Blue;
+
+    // Current color of the piece
+    public PieceColor pieceColor = PieceColor.None;
+
+
+    private void Awake() // or Start, if you prefer
+    {
+        // Assign the pieceColor based on the sprite
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr.sprite == Piece) // Assuming 'Piece' is the red sprite
+        {
+            pieceColor = PieceColor.Red;
+        }
+        else if (sr.sprite == Piece_Green)
+        {
+            pieceColor = PieceColor.Green;
+        }
+        else if (sr.sprite == Piece_Blue)
+        {
+            pieceColor = PieceColor.Blue;
+        }
+
+        // Now your piece knows its color
+    }
 
     //starting
 
@@ -37,7 +78,21 @@ public class Pieces : MonoBehaviour
             case "Piece_Green": this.GetComponent<SpriteRenderer>().sprite = Piece_Green; break;
             case "Piece_Blue": this.GetComponent<SpriteRenderer>().sprite = Piece_Blue; break;
         }
+        // Determine the piece's color based on its sprite
+        if (this.GetComponent<SpriteRenderer>().sprite == Piece)
+        {
+            pieceColor = PieceColor.Red;
+        }
+        else if (this.GetComponent<SpriteRenderer>().sprite == Piece_Green)
+        {
+            pieceColor = PieceColor.Green;
+        }
+        else if (this.GetComponent<SpriteRenderer>().sprite == Piece_Blue)
+        {
+            pieceColor = PieceColor.Blue;
+        }
     }
+
 
     public void SetCoords()
     {
@@ -193,27 +248,34 @@ public class Pieces : MonoBehaviour
 
     public void ChangeColorBasedOnTile()
     {
-        // Get the current tile's sprite renderer to access its color
         SpriteRenderer tileSpriteRenderer = GetCurrentTileSpriteRenderer();
         if (tileSpriteRenderer != null)
         {
+            Debug.Log("Tile sprite renderer found."); // Confirm the tile's SpriteRenderer was found
+
             Color pieceColor = GetComponent<SpriteRenderer>().color;
             Color tileColor = tileSpriteRenderer.color;
 
+            Debug.Log($"Piece Color: {pieceColor}, Tile Color: {tileColor}"); // Output the colors
+
             // Check if the colors are the same or different
-            // Assuming color comparison is done based on the name or another identifier since Color comparison might not be exact
             if (pieceColor == tileColor)
             {
-                // Change piece to white if it's the same color
+                Debug.Log("Colors are the same. Changing piece color to white.");
                 GetComponent<SpriteRenderer>().color = Color.white;
             }
             else
             {
-                // Change piece to black if it's a different color
+                Debug.Log("Colors are different. Changing piece color to black.");
                 GetComponent<SpriteRenderer>().color = Color.black;
             }
         }
+        else
+        {
+            Debug.Log("No tile sprite renderer found under the piece."); // Indicate that no tile was found
+        }
     }
+
 
     // Method to get the SpriteRenderer of the current tile
     private SpriteRenderer GetCurrentTileSpriteRenderer()
