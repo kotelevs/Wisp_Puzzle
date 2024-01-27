@@ -283,7 +283,7 @@ public class Pieces : MonoBehaviour
             else if (currentTile.name == "Tiles_Even_2" && pieceColor == PieceColor.Blue)
             {
                 Debug.Log("Current tile is 'Tiles_Even_2' (Blue) and piece color is Blue. Changing color to White.");
-                spriteMaterial.color = new Color(1f, 1f, 1f, 1f); // Change color using material
+                spriteMaterial.color = new Color(0f, 1f, 1f, 1f); // Change color using material
             }
             else
             {
