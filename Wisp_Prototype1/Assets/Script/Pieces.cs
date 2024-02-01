@@ -113,15 +113,10 @@ public class Pieces : MonoBehaviour
 
     public void SetCoords()
     {
-        float x = xBoard;
-        float y = yBoard;
+        float x = xBoard * 2f - 2f;
+        float y = yBoard * 2f - 2f;
 
-        x *= 2f;
-        y *= 2f;
-
-        //seems to control the mass of the pieces
-        x += -2f;
-        y += -2f;
+        Debug.Log($"Setting coords for piece. Grid: ({xBoard}, {yBoard}), World: ({x}, {y})");
 
         this.transform.position = new Vector3(x, y, -1.0f);
     }
