@@ -102,7 +102,7 @@ MonoBehaviour:
   movePlate: {fileID: 4393690811925387851, guid: 56a517d9dfdd02f428a626603bf5cbb1, type: 3}
   Piece: {fileID: 21300000, guid: 6faa575cb22550c449cd11de54a61f2b, type: 3}
   Piece_Green: {fileID: 21300000, guid: 60a0edd8a34a949408f2fc9a964c3421, type: 3}
-  Piece_Blue: {fileID: 21300000, guid: 4e5e66ac4d9c53f4b9804f50000945f9, type: 3}
+  Piece_Blue: {fileID: 21300000, guid: 5139da29fca99f3488876a9d5f1d070c, type: 3}
   pieceColor: 5
 --- !u!61 &-3052019563063722788
 BoxCollider2D:
